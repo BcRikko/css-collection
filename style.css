@@ -83,10 +83,9 @@ a:hover {
   fill: #151513;
   color: #fff;
   position: fixed;
-  bottom: 0;
+  top: 0;
   border: 0;
   right: 0;
-  transform: rotate(90deg);
 }
 .github-corner:hover .octo-arm {
   animation: octocat-wave 560ms ease-in-out;
