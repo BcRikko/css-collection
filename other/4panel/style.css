@@ -1,0 +1,68 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: slide 5s infinite;
+}
+
+.scene > p {
+  font-size: 256px;
+  color: white;
+}
+
+.scene.spring {
+  top: 0;
+  left: 0;
+  background-color: #f49592;
+}
+.scene.summer {
+  top: 0;
+  left: 100%;
+  background-color: #00b1a0;
+}
+.scene.autumn {
+  top: 100%;
+  left: 100%;
+  background-color: #f4a838;
+}
+.scene.winter {
+  top: 100%;
+  left: 0;
+  background-color: #8f93b7;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-100%, 0);
+  }
+  50% {
+    transform: translate(-100%, -100%);
+  }
+  75% {
+    transform: translate(0, -100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
