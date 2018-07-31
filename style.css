@@ -1,0 +1,117 @@
+:root {
+  --base-color: #333333;
+  --back-color: #f7f7f7;
+}
+
+body {
+  font-size: 1.5rem;
+  color: var(--base-color);
+  background-color: var(--back-color);
+
+  padding: 0px 30px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--base-color);
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* header */
+.header > .title::before {
+  content: "#";
+  margin-right: 10px;
+}
+
+/* main */
+.collection {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category > .title::before {
+  content: "##";
+  margin-right: 10px;
+}
+.category > .title::after {
+  display: block;
+  content: "";
+  height: 2px;
+  background-color: var(--base-color);
+}
+.category + .category {
+  margin-top: 100px;
+}
+
+.card {
+  width: 320px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 20px;
+}
+.card:hover {
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card .title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.iframe-wrapper {
+  width: 320px;
+  height: 240px;
+}
+.iframe-wrapper .iframe {
+  width: calc(320px * 1.5);
+  height: calc(240px * 1.5);
+  transform-origin: 0 0;
+  /* original / iframe */
+  transform: scale(0.666);
+}
+
+/* footer */
+.footer {
+  text-align: center;
+}
+
+/* GitHub Corner */
+.github-corner svg {
+  fill: #151513;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  border: 0;
+  right: 0;
+  transform: rotate(90deg);
+}
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
