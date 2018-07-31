@@ -1,0 +1,135 @@
+html,
+body {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+#furuhata {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.word-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-wrap {
+  display: flex;
+  justify-content: center;
+
+  border: solid 4px white;
+  width: 150px;
+  height: 150px;
+
+  color: white;
+}
+.word-wrap.accent {
+  background-color: red;
+  color: black;
+}
+.word-wrap > .word {
+  line-height: 150px;
+  font-size: 140px;
+  font-weight: bold;
+}
+
+.line {
+  height: 1000px;
+  width: 4px;
+  background-color: white;
+}
+.line.accent {
+  background-color: red;
+}
+
+#ep-1 {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-group {
+  position: relative;
+}
+
+.word-group .swing-left {
+  transform-origin: left;
+  transform: perspective(200px) rotateY(90deg);
+  animation: swing 1s ease 2s forwards;
+}
+
+.word-group .swing-right {
+  transform-origin: right;
+  transform: perspective(200px) rotateY(-90deg);
+  animation: swing 1s ease 2s forwards;
+}
+
+.word-group .line-1 {
+  position: absolute;
+  top: 100vh;
+  left: 0;
+
+  animation: grow-up 5s linear 200ms forwards;
+}
+
+.word-group .line-2 {
+  position: absolute;
+  top: 100vh;
+  left: calc(150px + 6px);
+
+  animation: grow-up 5s linear 0s forwards;
+}
+
+.word-group .line-3 {
+  position: absolute;
+  bottom: 100vh;
+  right: calc(150px + 6px);
+
+  animation: grow-down 5s linear 200ms forwards;
+}
+
+.word-group .line-4 {
+  position: absolute;
+  bottom: 100vh;
+  right: 0;
+
+  animation: grow-down 5s linear 0s forwards;
+}
+
+@keyframes swing {
+  to {
+    transform: perspective(200px) rotateX(0deg);
+  }
+}
+
+@keyframes grow-up {
+  from {
+    top: calc(150px / 2 + 50vh);
+  }
+  to {
+    top: calc(-1000px - 150px / 2 - 50vh);
+  }
+}
+
+@keyframes grow-down {
+  from {
+    bottom: calc(150px / 2 + 50vh);
+  }
+  to {
+    bottom: calc(-1000px - 150px / 2 - 50vh);
+  }
+}
