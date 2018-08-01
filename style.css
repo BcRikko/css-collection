@@ -108,6 +108,14 @@ a:hover {
 }
 
 @media (max-width: 500px) {
+  body {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .collection {
+    justify-content: center;
+  }
+
   .github-corner:hover .octo-arm {
     animation: none;
   }
