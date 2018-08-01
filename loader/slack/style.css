@@ -1,0 +1,115 @@
+:root {
+  --base-size: 100px;
+  --animation-time: 1.5s;
+}
+.ball {
+  --ball-size: 20px;
+  --ball-width: 100px;
+  --ball-height: 20px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.loading-mask {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slack {
+  position: relative;
+  width: var(--base-size);
+  height: var(--base-size);
+
+  animation: rotate var(--animation-time) linear infinite;
+  transform-origin: center;
+}
+
+.ball {
+  position: absolute;
+  width: var(--ball-width);
+  height: var(--ball-height);
+  transform-origin: top left;
+}
+.ball.one {
+  top: var(--ball-height);
+  left: 0px;
+  transform: rotate(0deg);
+}
+.ball.two {
+  top: 0;
+  right: calc((var(--ball-width) - var(--ball-height)) * -1);
+  transform: rotate(90deg);
+}
+.ball.three {
+  bottom: 0;
+  right: calc(var(--ball-width) * -1);
+  transform: rotate(180deg);
+}
+.ball.four {
+  bottom: calc(var(--ball-height) * -1);
+  left: var(--ball-size);
+  transform: rotate(270deg);
+}
+
+.ball::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--ball-size);
+  height: var(--ball-size);
+  border-radius: calc(var(--ball-size) / 2);
+
+  animation: stretch var(--animation-time) linear infinite;
+}
+
+.ball.one::after {
+  background-color: #e60064;
+}
+.ball.two::after {
+  background-color: #38bc95;
+}
+.ball.three::after {
+  background-color: #6fcdd9;
+}
+.ball.four::after {
+  background-color: #e7a43d;
+}
+
+@keyframes rotate {
+  0%,
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(190deg);
+  }
+  60% {
+    transform: rotate(210deg);
+  }
+  80%,
+  100% {
+    transform: rotate(380deg);
+  }
+}
+
+@keyframes stretch {
+  0%,
+  10%,
+  90%,
+  100% {
+    width: var(--ball-width);
+  }
+  20%,
+  80% {
+    width: var(--ball-size);
+  }
+}

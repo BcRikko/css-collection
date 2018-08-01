@@ -71,6 +71,7 @@ a:hover {
   transform-origin: 0 0;
   /* original / iframe */
   transform: scale(0.666);
+  border: none;
 }
 
 /* footer */
