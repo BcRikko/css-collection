@@ -1,0 +1,124 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.loading-mask {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.google {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  animation: rotate 1s infinite;
+}
+
+/* 中心の白い輪（マスク） */
+.google::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  height: 60%;
+  width: 60%;
+  margin: auto;
+
+  background-color: white;
+  border-radius: 50%;
+
+  z-index: 3;
+}
+
+/* 赤を途中で消す用 */
+.google::before {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  right: 0;
+
+  height: 30%;
+  width: 30%;
+
+  background-color: white;
+  transform: rotate(45deg);
+
+  z-index: 3;
+}
+
+.red {
+  background-color: #ea4335;
+
+  position: absolute;
+  top: 0;
+  height: 50%;
+  width: 85%;
+}
+
+.green {
+  background-color: #34a853;
+
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+
+.yellow {
+  background-color: #fbbc05;
+
+  position: absolute;
+  bottom: 30%;
+  left: -15%;
+  height: 40%;
+  width: 40%;
+
+  transform: rotate(-45deg);
+  z-index: 2;
+}
+
+.blue {
+  background-color: #4285f4;
+
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 35%;
+  width: 35%;
+
+  transform: rotate(45deg);
+  z-index: 2;
+}
+
+.blue-bar {
+  background-color: #4285f4;
+
+  position: absolute;
+  top: calc(50% - 10%);
+  right: 0;
+  height: 20%;
+  width: 50%;
+
+  z-index: 99;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
