@@ -1,4 +1,4 @@
-CSS Animation Collection
+CSS Collection
 ====
 
-CSS Animationを使ってつくったLoaderやProgressBar、その他アニメーションなどを公開するリポジトリです。
+CSSへの苦手意識を克服し、CSS芸人になるための練習場。
