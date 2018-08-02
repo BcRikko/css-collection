@@ -1,0 +1,129 @@
+/* 参考: http://icons-for-free.com/icon/camera_front_icon_379526.html */
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  width: 400px;
+  height: 400px;
+  background-color: #faba51;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camera {
+  position: relative;
+  width: 280px;
+  height: 190px;
+
+  background-color: white;
+  border-radius: 10px 0 10px 10px;
+}
+.camera::after {
+  content: "";
+  width: 100%;
+  height: 120px;
+
+  position: absolute;
+  top: 40px;
+
+  background-color: #3e3e3f;
+}
+
+.button {
+  width: 60px;
+  height: 15px;
+
+  position: absolute;
+  top: -15px;
+  left: 20px;
+
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+.part {
+  width: 170px;
+  height: 15px;
+
+  position: absolute;
+  top: -15px;
+  right: 0;
+
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+.flash {
+  width: 50px;
+  height: 30px;
+
+  position: absolute;
+  top: 0px;
+  right: 15px;
+
+  border-radius: 5px;
+  background-color: #3dcbe4;
+}
+
+.lens {
+  width: 140px;
+  height: 140px;
+
+  position: absolute;
+  bottom: 20px;
+  left: calc(50% - 50px);
+
+  border-radius: 50%;
+  background-color: white;
+  z-index: 1;
+}
+.lens::after {
+  content: "";
+  width: 110px;
+  height: 110px;
+
+  position: absolute;
+  bottom: 15px;
+  left: calc(50% - 55px);
+
+  border-radius: 50%;
+  background-color: #3dcbe4;
+}
+
+.parts::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+
+  position: absolute;
+  top: 12px;
+  left: calc(50px - 8px);
+
+  border-radius: 50%;
+  background-color: #3e3e3f;
+}
+.parts::after {
+  content: "";
+  width: 16px;
+  height: 40px;
+
+  position: absolute;
+  top: 90px;
+  left: calc(50px - 8px);
+
+  border-radius: calc(16px / 2);
+  background-color: #818284;
+  z-index: 2;
+}
