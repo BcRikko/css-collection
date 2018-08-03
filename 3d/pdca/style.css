@@ -1,0 +1,85 @@
+:root {
+  --size: 200px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  background-color: #edece8;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: var(--size);
+  height: var(--size);
+  perspective: calc(var(--size) * 2);
+}
+
+.pdca {
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+
+  transform-style: preserve-3d;
+  animation: wheel 4s linear infinite;
+}
+
+.panel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-color: white;
+  border: solid 4px #333333;
+}
+.panel::after {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+  line-height: var(--size);
+
+  font-size: 60px;
+}
+
+.panel.plan {
+  transform: rotateY(0deg) translateZ(calc(var(--size) / 2 + 50px));
+}
+.panel.do {
+  transform: rotateY(90deg) translateZ(calc(var(--size) / 2 + 50px));
+}
+.panel.check {
+  transform: rotateY(180deg) translateZ(calc(var(--size) / 2 + 50px));
+}
+.panel.action {
+  transform: rotateY(270deg) translateZ(calc(var(--size) / 2 + 50px));
+}
+.panel.plan::after {
+  content: "Plan";
+}
+.panel.do::after {
+  content: "Do";
+}
+.panel.check::after {
+  content: "Check";
+}
+.panel.action::after {
+  content: "Action";
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateY(360deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
