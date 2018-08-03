@@ -1,0 +1,116 @@
+:root {
+  --gear-size: 200px;
+  --gear-small-size: 120px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #e9f0f6;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  width: 300px;
+  height: 300px;
+}
+
+.gear {
+  /* default size */
+  --base: var(--gear-size);
+
+  width: var(--base);
+  height: var(--base);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border-radius: 50%;
+  background-color: #808080;
+
+  animation: rotate 1s infinite;
+  animation-timing-function: cubic-bezier(0.5, 0.5, 0, 1);
+}
+.gear::after {
+  --size: calc(var(--base) * 0.6);
+
+  content: "";
+  width: var(--size);
+  height: var(--size);
+
+  position: absolute;
+  top: calc(50% - var(--size) / 2);
+  left: calc(50% - var(--size) / 2);
+
+  border-radius: 50%;
+  background-color: #e9f0f6;
+}
+
+.gear.small {
+  --base: var(--gear-small-size);
+  
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(1, 0, 0.5, 0.5);
+  animation-delay: 950ms;
+
+  top: calc(var(--gear-size) / 2 + var(--gear-small-size) / 2);
+  left: 0;
+}
+
+.tooth {
+  --tooth-height: calc(var(--base) * 0.1);
+  --width: calc(var(--base) * 3.14 / 16);
+  --height: calc(var(--base) + var(--tooth-height) * 2);
+
+  width: var(--width);
+  height: calc(var(--height));
+
+  position: absolute;
+  top: calc(50% - var(--height) / 2);
+  left: calc(50% - var(--tooth-height));
+}
+.tooth::before,
+.tooth::after {
+  content: "";
+  width: var(--width);
+  height: var(--width);
+
+  background-color: #808080;
+
+  position: absolute;
+  left: 0;
+}
+.tooth::before {
+  top: 0;
+}
+.tooth::after {
+  bottom: 0;
+}
+.tooth:nth-child(1) {
+  transform: rotate(0deg);
+}
+.tooth:nth-child(2) {
+  transform: rotate(45deg);
+}
+.tooth:nth-child(3) {
+  transform: rotate(90deg);
+}
+.tooth:nth-child(4) {
+  transform: rotate(135deg);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
