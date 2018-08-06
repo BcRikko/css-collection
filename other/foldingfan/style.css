@@ -1,0 +1,296 @@
+:root {
+  /* 32分割 */
+  --angle: calc(360deg / 32);
+  --stick-height: 400px;
+  --stick-width: 10px;
+  --stick-color: #e5c796;
+  --rotate-top-origin: calc(var(--stick-height) * 0.9); /* 360px */
+  --rotate-bottom-origin: calc(var(--stick-height) * 0.1); /* 40px */
+  --fan-height: 250px;
+  --fan-top-width: calc(
+    2 * 3.14 * var(--rotate-top-origin) / 32 - 23px
+  ); /* 2πr/32 70.65px ※23pxは微調整*/
+  --fan-bottom-width: calc(
+    2 * 3.14 * (var(--rotate-top-origin) - var(--fan-height)) / 32
+  ); /* 2πr/32 21.59px */
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: var(--stick-height);
+  height: var(--stick-height);
+  margin: auto;
+}
+
+.folding-fan {
+  width: var(--stick-height);
+  height: var(--stick-height);
+
+  position: relative;
+}
+.folding-fan::after {
+  content: "";
+  position: absolute;
+  width: var(--stick-width);
+  height: var(--stick-width);
+  border-radius: 50%;
+  top: calc(var(--rotate-top-origin) - var(--stick-width) / 2);
+  left: calc(50% - var(--stick-width) / 2);
+  background-color: #6e655d;
+}
+
+.fan {
+  position: absolute;
+  width: var(--stick-width);
+  height: var(--stick-height);
+
+  left: calc(50% - var(--stick-width) / 2);
+
+  background-color: var(--stick-color);
+  border-radius: calc(var(--stick-width) / 2);
+
+  transform-origin: 50% var(--rotate-top-origin);
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.fan:nth-child(even) {
+  background-color: transparent;
+}
+.fan:last-child::after {
+  --width: calc(var(--stick-width) * 1.6);
+  position: absolute;
+  content: "";
+  width: var(--width);
+  height: var(--fan-height);
+  top: 0;
+  left: calc(50% - var(--width) / 2);
+
+  background-color: var(--stick-color);
+}
+
+.fan::before {
+  content: "";
+  position: absolute;
+  width: var(--fan-bottom-width);
+  height: 0;
+  top: 0;
+  left: calc(var(--fan-top-width) / 2 * -1 - (var(--stick-width) / 2));
+  border-top: solid var(--fan-height);
+  border-left: solid calc(var(--fan-top-width) / 2) transparent;
+  border-right: solid calc(var(--fan-top-width) / 2) transparent;
+}
+.fan:nth-child(odd)::before {
+  border-top-color: #f3f3f3;
+}
+.fan:nth-child(even)::before {
+  border-top-color: #dbdae0;
+}
+
+.fan:nth-child(1) {
+  transform: rotate(calc(var(--angle) * -6));
+}
+.fan:nth-child(2) {
+  transform: rotate(calc(var(--angle) * -5));
+  animation-name: close-open-2;
+}
+.fan:nth-child(3) {
+  transform: rotate(calc(var(--angle) * -4));
+  animation-name: close-open-3;
+}
+.fan:nth-child(4) {
+  transform: rotate(calc(var(--angle) * -3));
+  animation-name: close-open-4;
+}
+.fan:nth-child(5) {
+  transform: rotate(calc(var(--angle) * -2));
+  animation-name: close-open-5;
+}
+.fan:nth-child(6) {
+  transform: rotate(calc(var(--angle) * -1));
+  animation-name: close-open-6;
+}
+.fan:nth-child(7) {
+  transform: rotate(calc(var(--angle) * 0));
+  animation-name: close-open-7;
+}
+.fan:nth-child(8) {
+  transform: rotate(calc(var(--angle) * 1));
+  animation-name: close-open-8;
+}
+.fan:nth-child(9) {
+  transform: rotate(calc(var(--angle) * 2));
+  animation-name: close-open-9;
+}
+.fan:nth-child(10) {
+  transform: rotate(calc(var(--angle) * 3));
+  animation-name: close-open-10;
+}
+.fan:nth-child(11) {
+  transform: rotate(calc(var(--angle) * 4));
+  animation-name: close-open-11;
+}
+.fan:nth-child(12) {
+  transform: rotate(calc(var(--angle) * 5));
+  animation-name: close-open-12;
+}
+.fan:nth-child(13) {
+  transform: rotate(calc(var(--angle) * 6));
+  animation-name: close-open-13;
+}
+
+@keyframes close-open-2 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * -5));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-3 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * -4));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-4 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * -3));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-5 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * -2));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-6 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * -1));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-7 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 0));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-8 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 1));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-9 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 2));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-10 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 3));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-11 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 4));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-12 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 5));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
+@keyframes close-open-13 {
+  0%,
+  10%,
+  90%,
+  100% {
+    transform: rotate(calc(var(--angle) * 6));
+  }
+  40%,
+  60% {
+    transform: rotate(calc(var(--angle) * -6));
+  }
+}
