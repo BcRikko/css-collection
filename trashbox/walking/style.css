@@ -1,0 +1,157 @@
+:root {
+  --weight: 10px;
+  --length: 60px;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 200px;
+  height: calc(var(--length) * 5);
+  margin: auto;
+}
+
+.human {
+  position: relative;
+  animation: body 2s linear infinite;
+}
+
+.head {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: 0;
+  left: calc(50% - 30px);
+  
+  background-color: black;
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+  width: var(--weight);
+  height: calc(var(--length) * 1.7);
+  top: 60px;
+  left: calc(50% - var(--weight) / 2);
+  
+  background-color: black;
+}
+
+.part {
+  position: relative;
+  background-color: black;
+  width: var(--weight);
+  height: var(--length);
+
+  transform-origin: top center;
+}
+.part::before {
+  content: '';
+  background-color: black;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+
+}
+
+.arm {
+  position: absolute;
+  top: calc(var(--length) * 1.4);
+  left: calc(50% - var(--weight) / 2);
+  height: var(--length);
+  animation: origin 2s linear infinite;
+}
+.forearm {
+  position: absolute;
+  top: var(--length);
+  height: calc(var(--length) * 0.7);
+  animation: forearm 2s linear infinite;
+}
+.hand {
+  position: absolute;
+  top: calc(var(--length) * 0.7);
+  height: calc(var(--length) / 2);
+}
+.arm:first-child {
+  animation-delay: -1s;
+}
+.arm:first-child .forearm{
+  animation-delay: -1s;
+}
+
+.thigh {
+  position: absolute;
+  top: calc(60px + var(--length) * 1.8);
+  left: calc(50% - var(--weight) / 2);
+
+  animation: origin 2s linear infinite;
+}
+.leg {
+  position: absolute;
+  top: var(--length);
+  animation: leg 2s linear infinite;
+}
+.foot {
+  position: absolute;
+  top: var(--length);
+  height: 40px;
+  transform-origin: top center;
+  animation: foot 2s linear infinite;
+}
+.thigh:first-child,
+.thigh:first-child .leg,
+.thigh:first-child .foot {
+  animation-delay: -1s;
+}
+
+@keyframes body {
+  0%, 50%, 100% {
+    transform: translateY(0px);
+  }
+  25%, 75% {
+    transform: translateY(10px);
+  }
+}
+@keyframes origin {
+  0%, 50%, 100% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(-35deg);
+  }
+  75% {
+    transform: rotateZ(35deg);
+  }
+}
+@keyframes forearm {
+  0%, 100% {
+    transform: rotateZ(0deg)
+  }
+  25%, 50% {
+    transform: rotateZ(-40deg)
+  }
+}
+@keyframes leg {
+  0%, 75%, 100% {
+    transform: rotateZ(40deg);
+  }
+  25%, 50% {
+    transform: rotateZ(0);
+  }
+}
+@keyframes foot {
+  0%, 60%, 100% {
+    transform: rotateZ(-90deg);
+  }
+  70%, 85% {
+    transform: rotateZ(-45deg)
+  }
+}
