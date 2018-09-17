@@ -1,0 +1,104 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  margin: auto;
+  width: 400px;
+  height: 300px;
+}
+.abacus {
+  margin: auto;
+  width: 400px;
+
+  display: flex;
+}
+
+.place {
+  position: relative;
+  width: 80px;
+  border: 8px solid #333333;
+}
+.place + .place {
+  border-left: 0;
+}
+.place::before {
+  position: absolute;
+  content: "";
+  width: 8px;
+  height: 100%;
+  top: 0;
+  left: calc(50% - 4px);
+
+  background-color: brown;
+}
+.place::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 6px;
+  top: 83px;
+
+  background-color: #333333;
+}
+
+.counter {
+  display: block;
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.counter:focus {
+  outline: 0;
+}
+
+.counter:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 40px;
+  height: 40px;
+
+  transform: rotateZ(135deg)
+    skew(calc((90deg - 60deg) / 2), calc((90deg - 60deg) / 2));
+  background-color: #c97630;
+  transition: 0.3s;
+}
+
+.counter.five-unit[value="on"]:checked::before {
+  top: 40px;
+}
+
+.counter.one-unit[value="0"]:checked::before,
+.counter.one-unit[value="0"]:checked ~ .counter.one-unit::before {
+  top: 40px;
+}
+.counter.one-unit[value="1"]:checked::before,
+.counter.one-unit[value="1"]:checked ~ .counter.one-unit::before {
+  top: 40px;
+}
+.counter.one-unit[value="2"]:checked::before,
+.counter.one-unit[value="2"]:checked ~ .counter.one-unit::before {
+  top: 40px;
+}
+.counter.one-unit[value="3"]:checked::before,
+.counter.one-unit[value="3"]:checked ~ .counter.one-unit::before {
+  top: 40px;
+}
+.counter.one-unit[value="4"]:checked::before,
+.counter.one-unit[value="4"]:checked ~ .counter.one-unit::before {
+  top: 40px;
+}
