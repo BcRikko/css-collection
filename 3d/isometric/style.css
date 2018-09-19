@@ -1,0 +1,154 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #c6e9ef;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  width: 300px;
+  height: 250px;
+}
+
+.screen * {
+  transform-style: preserve-3d;
+}
+
+.ground {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: #8cc23c;
+
+  transform:
+    rotateX(60deg)
+    rotateZ(45deg);
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #606060;
+}
+
+.line {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: calc(50% - 30px);
+  width: 60px;
+  height: 10px;
+  background-color: #fdfdfd;
+}
+.line::before,
+.line::after {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 10px;
+  background-color: inherit;
+}
+.line::before {
+  left: calc(-30px - 60px);
+}
+.line::after {
+  right: calc(-30px - 60px);
+}
+
+.house {
+  position: relative;
+  top: 30px;
+  left: 10px
+}
+.wall {
+  position: absolute;
+  width: 100px;
+  height: 130px;
+}
+.wall.front {
+  top: 100px;
+  left: calc(50% - 65px);
+  background-color: #fffbef;
+  transform:
+    rotateX(90deg)
+    rotateZ(90deg)
+    translateX(65px);
+}
+.wall.front::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  border-top: 65px solid transparent;
+  border-bottom: 65px solid transparent;
+  border-left: 38px solid #fffbef;
+}
+.wall.side {
+  top: 100px;
+  left: calc(50% - 65px);
+  background-color: #fcf5d9;
+  transform:
+    rotateX(90deg)
+    rotateY(90deg)
+    rotateZ(90deg)
+    translateX(65px)
+    translateY(65px)
+    translateZ(65px);
+}
+.door {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 60px;
+  height: 30px;
+  background-color: #8b733b;
+  border: 3px solid #5f4b1c;
+  border-left: none;
+}
+.door::after {
+  position: absolute;
+  content: "";
+  left: calc(50% - 3px);
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #5f4b1c;
+}
+.window {
+  position: absolute;
+  bottom: 10px;
+  left: 25px;
+  width: 30px;
+  height: 50px;
+  background-color: #a7dcea;
+  border: 3px solid #8b733b;
+}
+
+.roof {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 65px);
+  transform: translateZ(156px);
+}
+.roof::before,
+.roof::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 160px;
+}
+.roof::before {
+  background-color: #c46b07;
+  transform: rotateY(-30deg) translateX(-50px);
+}
+.roof::after {
+  background-color: #e8910a;
+  transform: rotateY(30deg) translateX(50px);
+}
