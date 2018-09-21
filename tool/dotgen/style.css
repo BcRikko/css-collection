@@ -1,0 +1,312 @@
+* {
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  color: #333333;
+  background-color: #f7f7f7;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Element Style */
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+textarea {
+  font-family: "Press Start 2P", cursive;
+  font-size: 10px;
+  background-color: #f7f7f7;
+  padding: 10px;
+  border: 3px solid #333333;
+}
+
+input {
+  font-family: "Press Start 2P", cursive;
+  font-size: 18px;
+
+  padding: 5px 10px;
+}
+
+input + span {
+  margin-left: 5px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+  width: 0;
+}
+input[type="radio"] ~ span {
+  position: relative;
+}
+input[type="radio"] ~ span::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -30px;
+
+  width: 2px;
+  height: 2px;
+  background: transparent;
+
+  box-shadow: 2px 2px 0 transparent, 4px 2px 0 transparent,
+    6px 2px 0 transparent, 8px 2px 0 transparent, 10px 2px 0 transparent,
+    12px 2px 0 transparent, 14px 2px 0 transparent, 16px 2px 0 transparent,
+    18px 2px 0 transparent, 20px 2px 0 transparent, 22px 2px 0 transparent,
+    24px 2px 0 transparent, 2px 4px 0 transparent, 4px 4px 0 transparent,
+    6px 4px 0 transparent, 8px 4px 0 transparent, 10px 4px 0 transparent,
+    12px 4px 0 transparent, 14px 4px 0 transparent, 16px 4px 0 transparent,
+    18px 4px 0 transparent, 20px 4px 0 transparent, 22px 4px 0 transparent,
+    24px 4px 0 transparent, 2px 6px 0 transparent, 4px 6px 0 transparent,
+    6px 6px 0 #333333, 8px 6px 0 #333333, 10px 6px 0 #333333, 12px 6px 0 #333333,
+    14px 6px 0 #333333, 16px 6px 0 #333333, 18px 6px 0 #333333,
+    20px 6px 0 #333333, 22px 6px 0 transparent, 24px 6px 0 transparent,
+    2px 8px 0 transparent, 4px 8px 0 transparent, 6px 8px 0 #333333,
+    8px 8px 0 transparent, 10px 8px 0 transparent, 12px 8px 0 transparent,
+    14px 8px 0 transparent, 16px 8px 0 transparent, 18px 8px 0 transparent,
+    20px 8px 0 #333333, 22px 8px 0 transparent, 24px 8px 0 transparent,
+    2px 10px 0 transparent, 4px 10px 0 transparent, 6px 10px 0 #333333,
+    8px 10px 0 transparent, 10px 10px 0 transparent, 12px 10px 0 transparent,
+    14px 10px 0 transparent, 16px 10px 0 transparent, 18px 10px 0 transparent,
+    20px 10px 0 #333333, 22px 10px 0 transparent, 24px 10px 0 transparent,
+    2px 12px 0 transparent, 4px 12px 0 transparent, 6px 12px 0 #333333,
+    8px 12px 0 transparent, 10px 12px 0 transparent, 12px 12px 0 transparent,
+    14px 12px 0 transparent, 16px 12px 0 transparent, 18px 12px 0 transparent,
+    20px 12px 0 #333333, 22px 12px 0 transparent, 24px 12px 0 transparent,
+    2px 14px 0 transparent, 4px 14px 0 transparent, 6px 14px 0 #333333,
+    8px 14px 0 transparent, 10px 14px 0 transparent, 12px 14px 0 transparent,
+    14px 14px 0 transparent, 16px 14px 0 transparent, 18px 14px 0 transparent,
+    20px 14px 0 #333333, 22px 14px 0 transparent, 24px 14px 0 transparent,
+    2px 16px 0 transparent, 4px 16px 0 transparent, 6px 16px 0 #333333,
+    8px 16px 0 transparent, 10px 16px 0 transparent, 12px 16px 0 transparent,
+    14px 16px 0 transparent, 16px 16px 0 transparent, 18px 16px 0 transparent,
+    20px 16px 0 #333333, 22px 16px 0 transparent, 24px 16px 0 transparent,
+    2px 18px 0 transparent, 4px 18px 0 transparent, 6px 18px 0 #333333,
+    8px 18px 0 transparent, 10px 18px 0 transparent, 12px 18px 0 transparent,
+    14px 18px 0 transparent, 16px 18px 0 transparent, 18px 18px 0 transparent,
+    20px 18px 0 #333333, 22px 18px 0 transparent, 24px 18px 0 transparent,
+    2px 20px 0 transparent, 4px 20px 0 transparent, 6px 20px 0 #333333,
+    8px 20px 0 #333333, 10px 20px 0 #333333, 12px 20px 0 #333333,
+    14px 20px 0 #333333, 16px 20px 0 #333333, 18px 20px 0 #333333,
+    20px 20px 0 #333333, 22px 20px 0 transparent, 24px 20px 0 transparent,
+    2px 22px 0 transparent, 4px 22px 0 transparent, 6px 22px 0 transparent,
+    8px 22px 0 transparent, 10px 22px 0 transparent, 12px 22px 0 transparent,
+    14px 22px 0 transparent, 16px 22px 0 transparent, 18px 22px 0 transparent,
+    20px 22px 0 transparent, 22px 22px 0 transparent, 24px 22px 0 transparent,
+    2px 24px 0 transparent, 4px 24px 0 transparent, 6px 24px 0 transparent,
+    8px 24px 0 transparent, 10px 24px 0 transparent, 12px 24px 0 transparent,
+    14px 24px 0 transparent, 16px 24px 0 transparent, 18px 24px 0 transparent,
+    20px 24px 0 transparent, 22px 24px 0 transparent, 24px 24px 0 transparent;
+}
+input[type="radio"]:checked ~ span::before {
+  box-shadow: 2px 2px 0 transparent, 4px 2px 0 transparent,
+    6px 2px 0 transparent, 8px 2px 0 transparent, 10px 2px 0 transparent,
+    12px 2px 0 transparent, 14px 2px 0 transparent, 16px 2px 0 transparent,
+    18px 2px 0 transparent, 20px 2px 0 transparent, 22px 2px 0 transparent,
+    24px 2px 0 transparent, 2px 4px 0 transparent, 4px 4px 0 transparent,
+    6px 4px 0 transparent, 8px 4px 0 transparent, 10px 4px 0 transparent,
+    12px 4px 0 transparent, 14px 4px 0 transparent, 16px 4px 0 transparent,
+    18px 4px 0 transparent, 20px 4px 0 transparent, 22px 4px 0 transparent,
+    24px 4px 0 transparent, 2px 6px 0 transparent, 4px 6px 0 transparent,
+    6px 6px 0 #333333, 8px 6px 0 #333333, 10px 6px 0 #333333, 12px 6px 0 #333333,
+    14px 6px 0 #333333, 16px 6px 0 #333333, 18px 6px 0 #333333,
+    20px 6px 0 transparent, 22px 6px 0 #333333, 24px 6px 0 #333333,
+    2px 8px 0 transparent, 4px 8px 0 transparent, 6px 8px 0 #333333,
+    8px 8px 0 transparent, 10px 8px 0 transparent, 12px 8px 0 transparent,
+    14px 8px 0 transparent, 16px 8px 0 transparent, 18px 8px 0 transparent,
+    20px 8px 0 #333333, 22px 8px 0 #333333, 24px 8px 0 #333333,
+    2px 10px 0 transparent, 4px 10px 0 transparent, 6px 10px 0 #333333,
+    8px 10px 0 transparent, 10px 10px 0 transparent, 12px 10px 0 transparent,
+    14px 10px 0 transparent, 16px 10px 0 transparent, 18px 10px 0 #333333,
+    20px 10px 0 #333333, 22px 10px 0 transparent, 24px 10px 0 transparent,
+    2px 12px 0 transparent, 4px 12px 0 transparent, 6px 12px 0 #333333,
+    8px 12px 0 #333333, 10px 12px 0 transparent, 12px 12px 0 transparent,
+    14px 12px 0 transparent, 16px 12px 0 #333333, 18px 12px 0 #333333,
+    20px 12px 0 transparent, 22px 12px 0 transparent, 24px 12px 0 transparent,
+    2px 14px 0 transparent, 4px 14px 0 transparent, 6px 14px 0 #333333,
+    8px 14px 0 #333333, 10px 14px 0 #333333, 12px 14px 0 transparent,
+    14px 14px 0 #333333, 16px 14px 0 #333333, 18px 14px 0 transparent,
+    20px 14px 0 #333333, 22px 14px 0 transparent, 24px 14px 0 transparent,
+    2px 16px 0 transparent, 4px 16px 0 transparent, 6px 16px 0 #333333,
+    8px 16px 0 transparent, 10px 16px 0 #333333, 12px 16px 0 #333333,
+    14px 16px 0 #333333, 16px 16px 0 transparent, 18px 16px 0 transparent,
+    20px 16px 0 #333333, 22px 16px 0 transparent, 24px 16px 0 transparent,
+    2px 18px 0 transparent, 4px 18px 0 transparent, 6px 18px 0 #333333,
+    8px 18px 0 transparent, 10px 18px 0 transparent, 12px 18px 0 #333333,
+    14px 18px 0 transparent, 16px 18px 0 transparent, 18px 18px 0 transparent,
+    20px 18px 0 #333333, 22px 18px 0 transparent, 24px 18px 0 transparent,
+    2px 20px 0 transparent, 4px 20px 0 transparent, 6px 20px 0 #333333,
+    8px 20px 0 #333333, 10px 20px 0 #333333, 12px 20px 0 #333333,
+    14px 20px 0 #333333, 16px 20px 0 #333333, 18px 20px 0 #333333,
+    20px 20px 0 #333333, 22px 20px 0 transparent, 24px 20px 0 transparent,
+    2px 22px 0 transparent, 4px 22px 0 transparent, 6px 22px 0 transparent,
+    8px 22px 0 transparent, 10px 22px 0 transparent, 12px 22px 0 transparent,
+    14px 22px 0 transparent, 16px 22px 0 transparent, 18px 22px 0 transparent,
+    20px 22px 0 transparent, 22px 22px 0 transparent, 24px 22px 0 transparent,
+    2px 24px 0 transparent, 4px 24px 0 transparent, 6px 24px 0 transparent,
+    8px 24px 0 transparent, 10px 24px 0 transparent, 12px 24px 0 transparent,
+    14px 24px 0 transparent, 16px 24px 0 transparent, 18px 24px 0 transparent,
+    20px 24px 0 transparent, 22px 24px 0 transparent, 24px 24px 0 transparent;
+}
+
+input[type="color"] {
+  padding: 0;
+}
+
+/* header */
+.header {
+  padding: 10px 40px;
+  background-color: #333333;
+  color: #f7f7f7;
+}
+
+/* main */
+.dot-gen {
+  flex: 1;
+  display: grid;
+  grid-template:
+    "editor settings"
+    "editor output"
+    / auto 400px;
+
+  margin: 30px 20px 10px;
+}
+
+.section {
+  margin: 0 20px;
+}
+
+.editor {
+  grid-area: editor;
+}
+.settings {
+  grid-area: settings;
+}
+.output {
+  grid-area: output;
+}
+
+.editor .dot-grid {
+  display: grid;
+  margin: auto;
+  width: 600px;
+  height: 600px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+  border: 3px solid #333333;
+
+  /* Transparent pattern */
+  background-color: #fdfdfd;
+  background-image: linear-gradient(
+      45deg,
+      #e2e2e2 25%,
+      transparent 25%,
+      transparent 75%,
+      #e2e2e2 75%,
+      #e2e2e2
+    ),
+    linear-gradient(
+      45deg,
+      #e2e2e2 25%,
+      transparent 25%,
+      transparent 75%,
+      #e2e2e2 75%,
+      #e2e2e2
+    );
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+.editor .dot-grid div {
+  border: 1px solid #b6b6b6;
+  background-color: transparent;
+}
+
+.section-title {
+  margin-top: 0;
+}
+.section-title::before {
+  content: "\203A";
+  margin-right: 5px;
+}
+
+.settings-form .field-label {
+  display: block;
+  font-size: 18px;
+  margin: 30px 0 20px;
+}
+
+.field {
+  margin: 5px 0 10px;
+}
+
+/* helper */
+._vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+._inline {
+  display: inline;
+}
+
+/* footer */
+.footer {
+  text-align: center;
+}
+
+/* GitHub Corner */
+.github-corner svg {
+  fill: #f7f7f7;
+  color: #333333;
+  position: fixed;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .collection {
+    justify-content: center;
+  }
+
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
