@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>8bit.css - CSS Collection</title>
+  <link href="./style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href='https://dl.dropboxusercontent.com/s/ds1o5wf631df058/vs2015.css?dl=0' rel='stylesheet' />
+  <script src='https://dl.dropboxusercontent.com/s/txkrfz0vsg2q1ty/highlight.pack.js?dl=0'></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <header class="header">
+    <h1>8bit.css</h1>
+    <p>CSS Framework like 8bit</p>
+  </header>
+
+  <main>
+    <section class="container _space-updown">
+      <h2>Button</h2>
+      <button class="button" type="button">Start</button>
+      <button class="button -primary" type="button">Primary</button>
+      <button class="button -success" type="button">Success</button>
+      <button class="button -warning" type="button">Warning</button>
+      <button class="button -error" type="button">Error</button>
+    </section>
+    <section class="container _space-updown">
+      <h2>Radios</h2>
+      <div class="radios">
+        <label class="radio"><input type="radio" name="character" checked>Mario</label>
+        <label class="radio"><input type="radio" name="character">Luigi</label>
+        <label class="radio"><input type="radio" name="character">Peach</label>
+      </div>
+    </section>
+    <section class="container _space-updown">
+      <h2>Checkbox</h2>
+      <label class="checkbox"><input type="checkbox" checked>Sound mute</label>
+    </section>
+
+    <section class="container _space-updown">
+      <h2>Container</h2>
+      <h3>Normal Theme</h3>
+      <div class="container">
+        <p>Good morning. Thou hast had a good night's sleep I hope.</p>
+      </div>
+      <h3>Dark Theme</h3>
+      <div class="container _dark">
+        <p>Good morning. Thou hast had a good night's sleep I hope.</p>
+      </div>
+      <h3>with Title</h3>
+      <div class="container -title _dark">
+        <label class="title">Command</label>
+        <div class="radios">
+            <label class="radio"><input type="radio" name="command" checked>FIGHT</label>
+            <label class="radio"><input type="radio" name="command">SPELL</label>
+            <label class="radio"><input type="radio" name="command">ITEM</label>
+            <label class="radio"><input type="radio" name="command">RUN</label>
+          </div>
+      </div>
+    </section>
+  </main>
+  <nav></nav>
+</body>
+
+</html>
